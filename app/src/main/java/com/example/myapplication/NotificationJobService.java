@@ -54,6 +54,7 @@ public class NotificationJobService extends JobService {
                 .setDefaults(NotificationCompat.DEFAULT_ALL)
                 .setAutoCancel(true);
 
+        mNotifyManager.notify(0, builder.build());
         return false;
     }
 

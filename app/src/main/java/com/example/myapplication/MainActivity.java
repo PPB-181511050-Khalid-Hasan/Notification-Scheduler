@@ -6,6 +6,7 @@ import android.app.job.JobInfo;
 import android.app.job.JobScheduler;
 import android.content.ComponentName;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.RadioGroup;
 import android.widget.SeekBar;
 import android.widget.Switch;
@@ -47,11 +48,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    public void onClick(){
-
-    }
-
-    public void scheduleJob(){
+    public void scheduleJob(View view){
         RadioGroup networkOptions = findViewById(R.id.networkOptions);
         int selectedNetworkID = networkOptions.getCheckedRadioButtonId();
         int selectedNetworkOption = JobInfo.NETWORK_TYPE_NONE;
@@ -99,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void cancelJobs(){
+    public void cancelJobs(View view){
         if (mScheduler != null) {
             mScheduler.cancelAll();
             mScheduler = null;
